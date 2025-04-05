@@ -1,8 +1,6 @@
 runtime: php
 env: flex
 
-entrypoint: serve public/index.php
-
 runtime_config:
   enable_stackdriver_integration: true
   operating_system: "ubuntu22"
