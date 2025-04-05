@@ -3,6 +3,7 @@ env: flex
 
 runtime_config:
   enable_stackdriver_integration: true
+  runtime_version: "8.2"
   operating_system: "ubuntu22"
   document_root: public
 
