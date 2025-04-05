@@ -1,4 +1,4 @@
-FROM php:7.2
+FROM php:8.2
 RUN apt-get update -y && apt-get install -y \
     openssl zip unzip git libonig-dev libzip-dev libpng-dev libjpeg-dev libpq-dev && \
     apt-get clean && \
@@ -7,7 +7,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN docker-php-ext-install pdo mbstring
 WORKDIR /app
 COPY . /app
-RUN composer install --no-scripts --ignore-platform-reqs
+RUN composer install --no-scripts --ignore-platform-reqs --optimize-autoloader --no-dev
+
 
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8181"]
 
