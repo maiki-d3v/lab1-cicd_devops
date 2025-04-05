@@ -1,0 +1,13 @@
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
+
+steps:
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        gcloud config set app/cloud_build_timeout 3600
+        gcloud app deploy -q --promote -v=$BUILD_ID --project=devops-cicd-lab1
+
+timeout: "3600s"
