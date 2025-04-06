@@ -3,19 +3,16 @@ options:
 
 steps:
   - name: "gcr.io/cloud-builders/docker"
-    entrypoint: "bash"
     args:
       - "build"
       - "-t"
       - "gcr.io/$PROJECT_ID/app"
       - "."
   - name: "gcr.io/cloud-builders/docker"
-    entrypoint: "bash"
     args:
       - "push"
       - "gcr.io/$PROJECT_ID/app"
   - name: "gcr.io/cloud-builders/gcloud"
-    entrypoint: "bash"
     args:
       - "run"
       - "deploy"
