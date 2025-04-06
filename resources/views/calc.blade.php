@@ -1,6 +1,6 @@
 <form action="/calc" method="post" >
     {{ csrf_field() }}
-    <h3>La calculadora mas perra de toda intetnet</h3>
+    <h3>La calculadora mas salvaje de toda intetnet</h3>
     <input placeholder="A" value="{{ $a }}" name="a" />
     <select name="action">
         <option @if ($action == '+') selected="selected" @endif>+</option>
