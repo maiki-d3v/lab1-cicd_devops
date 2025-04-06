@@ -18,6 +18,7 @@ steps:
       - "deploy"
       - "app"
       - "--image=gcr.io/$PROJECT_ID/app"
+      - "--region=us-central1"
       - "--platform=managed"
       - "--allow-unauthenticated"
 
